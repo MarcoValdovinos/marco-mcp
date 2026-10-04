@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "file": "anchors.json",
+    "purpose": "Anclajes criptográficos verificables del titular",
+    "author": "Marco Antonio Rojas Valdovinos",
+    "contact": "marco.a.rojas.v@hotmail.com",
+    "updated_at": "2026-10-04",
+    "signature": "DMD-33 ●_○"
+  },
+
+  "obra_base": {
+    "nombre": "Acta Fundacional + Biografía Oficial",
+    "safe_creative": "2607086319439",
+    "safe_creative_url": "https://www.safecreative.org/certificate/2607086319439",
+    "ethereum_tx": "0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e",
+    "ethereum_url": "https://etherscan.io/tx/0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e",
+    "sha256": "41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3",
+    "fecha_anclaje": "2026-07-08T07:02:03Z",
+    "blockchain": "Ethereum Mainnet",
+    "verificable_por": "cualquier persona sin permiso del autor"
+  },
+
+  "registros_safe_creative": [
+    {
+      "id": "2607086319439",
+      "obra": "Acta Fundacional + Biografía Oficial",
+      "estado": "publicado",
+      "tipo": "documento",
+      "fecha": "2026-07-08",
+      "blockchain_anchor": "0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e"
+    },
+    {
+      "id": "2607146379465",
+      "obra": "KRONOS Vault · Arquitectura de Legado Digital",
+      "estado": "genesis",
+      "tipo": "sistema",
+      "fecha": "2026-07-14",
+      "sellado_eidas": "Firmaprofesional",
+      "blockchain_anchor": "0xd2c2a7e1...fb895774c"
+    },
+    {
+      "id": "2608096674952",
+      "obra": "Sistema de Protección Criptográfica",
+      "estado": "prototipo",
+      "tipo": "sistema",
+      "fecha": "2026-08-09"
+    }
+  ],
+
+  "marcas": [
+    {
+      "nombre": "KRONOS",
+      "clases": [9, 42],
+      "jurisdiccion": "IMPI México (en trámite)"
+    },
+    {
+      "nombre": "KÓDICE",
+      "clases": [9, 42, 45],
+      "jurisdiccion": "IMPI México (en trámite)"
+    },
+    {
+      "nombre": "DMD-33",
+      "clases": [9, 35, 42],
+      "jurisdiccion": "IMPI México (en trámite)"
+    }
+  ],
+
+  "repositorios": {
+    "marco_mcp": {
+      "url": "https://github.com/Marcorojas17/marco-mcp",
+      "visibility": "private",
+      "description": "Substrato cognitivo personal · servidor MCP"
+    },
+    "kronos_protocol": {
+      "url": null,
+      "visibility": "pending",
+      "description": "Framework de verificación criptográfica"
+    },
+    "kodice": {
+      "url": null,
+      "visibility": "pending",
+      "description": "Protocolo de gobernanza de IA conversacional"
+    }
+  },
+
+  "verification": {
+    "instructions": "Cualquier persona puede verificar la autoría abriendo el link de Etherscan y recalculando el SHA-256 del documento original.",
+    "requires_permission": false,
+    "sovereign": true
+  }
+}
