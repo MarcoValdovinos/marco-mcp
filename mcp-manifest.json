@@ -1,0 +1,150 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/manifest.json",
+
+  "name": "marco.mcp",
+  "displayName": "marco.mcp · Substrato cognitivo",
+  "version": "0.1.0",
+  "description": "Servidor MCP que expone identidad, proyectos y decisiones de Marco Antonio Rojas Valdovinos a cualquier IA compatible con Model Context Protocol.",
+
+  "author": {
+    "name": "Marco Antonio Rojas Valdovinos",
+    "email": "marco.a.rojas.v@hotmail.com",
+    "url": "https://github.com/Marcorojas17"
+  },
+
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Marcorojas17/marco-mcp#readme",
+  "repository": "https://github.com/Marcorojas17/marco-mcp",
+
+  "transport": "stdio",
+  "protocolVersion": "2024-11-05",
+
+  "capabilities": {
+    "resources": true,
+    "tools": true,
+    "prompts": false,
+    "logging": false
+  },
+
+  "resources": [
+    {
+      "uri": "marco://profile",
+      "name": "Perfil del autor",
+      "description": "Identidad, bio, stack y principios operativos",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "marco://current",
+      "name": "Estado actual",
+      "description": "Foco del día, próximos 7/30/90 días, bloqueadores",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "marco://voice",
+      "name": "Estilo de escritura",
+      "description": "Tono, frases características, anti-patrones, ejemplos",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "marco://projects",
+      "name": "Proyectos activos",
+      "description": "7 proyectos documentados: KRONOS API, KÓDICE, YEJIDÁ, MD-33, VAULT, CORTEX",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "marco://decisions",
+      "name": "Log de decisiones",
+      "description": "Decisiones arquitectónicas con razón y alternativa descartada",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "marco://anchors",
+      "name": "Anclajes criptográficos",
+      "description": "Safe Creative, Ethereum, hashes SHA-256 verificables",
+      "mimeType": "application/json"
+    }
+  ],
+
+  "tools": [
+    {
+      "name": "search",
+      "description": "Busca texto en todo el substrato (perfil, proyectos, decisiones)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Texto a buscar (case-insensitive)"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "log_decision",
+      "description": "Registra una decisión arquitectónica nueva como archivo markdown",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Título corto de la decisión"
+          },
+          "context": {
+            "type": "string",
+            "description": "Contexto de por qué surgió la decisión"
+          },
+          "decision": {
+            "type": "string",
+            "description": "Qué se decidió"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Por qué se decidió esto"
+          },
+          "alternative": {
+            "type": "string",
+            "description": "Qué alternativa se descartó y por qué"
+          }
+        },
+        "required": ["title", "decision", "reason"]
+      }
+    },
+    {
+      "name": "update_current",
+      "description": "Sobrescribe current.md con nuevo contenido",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Contenido markdown completo del nuevo current.md"
+          }
+        },
+        "required": ["content"]
+      }
+    },
+    {
+      "name": "snapshot",
+      "description": "Calcula hash SHA-256 del estado actual del substrato completo",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+
+  "tags": [
+    "mcp",
+    "personal",
+    "sovereign-identity",
+    "local-first",
+    "ed25519"
+  ],
+
+  "verification": {
+    "safeCreative": "2607086319439",
+    "ethereum": "0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e",
+    "sha256": "41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3"
+  }
+}
