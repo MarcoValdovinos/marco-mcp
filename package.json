@@ -1,0 +1,87 @@
+{
+  "name": "marco-mcp",
+  "version": "0.1.0",
+  "description": "Substrato cognitivo personal MCP de Marco Antonio Rojas Valdovinos. Servidor que da memoria continua a cualquier IA compatible con Model Context Protocol.",
+  "type": "module",
+  "private": true,
+
+  "bin": {
+    "marco-mcp": "./src/server.js"
+  },
+
+  "scripts": {
+    "start": "node src/server.js",
+    "snapshot": "node src/snapshot.js",
+    "test": "./test.sh",
+    "install-mcp": "./install.sh",
+    "hash": "cat data/profile.md data/current.md data/voice.md data/projects/*.md data/decisions/*.md | sha256sum"
+  },
+
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+
+  "devDependencies": {},
+
+  "author": {
+    "name": "Marco Antonio Rojas Valdovinos",
+    "email": "marco.a.rojas.v@hotmail.com",
+    "url": "https://github.com/Marcorojas17"
+  },
+
+  "contributors": [],
+
+  "license": "Apache-2.0",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcorojas17/marco-mcp.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/Marcorojas17/marco-mcp/issues",
+    "email": "marco.a.rojas.v@hotmail.com"
+  },
+
+  "homepage": "https://github.com/Marcorojas17/marco-mcp#readme",
+
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "personal",
+    "sovereign-identity",
+    "local-first",
+    "ed25519",
+    "identity",
+    "claude",
+    "cursor",
+    "ai-memory"
+  ],
+
+  "funding": {
+    "type": "custom",
+    "url": "mailto:marco.a.rojas.v@hotmail.com"
+  },
+
+  "publishConfig": {
+    "access": "private"
+  },
+
+  "mcp": {
+    "manifest": "./mcp-manifest.json",
+    "transport": "stdio",
+    "resources": 6,
+    "tools": 4
+  },
+
+  "verification": {
+    "safeCreative": "2607086319439",
+    "ethereum": "0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e",
+    "sha256": "41a3683bbf83296eeb45da9b0e0ea5a7c095e78b493772e79520a92dbc39f4c3"
+  }
+}
