@@ -1,0 +1,108 @@
+# ═══════════════════════════════════════════════════════════════
+#  MARCO.MCP · .gitignore
+#  Reglas de exclusión para repositorio privado
+#  Autor: Marco Antonio Rojas Valdovinos · Toluca, México · 2026
+# ═══════════════════════════════════════════════════════════════
+
+# ─── 📦 Dependencias ─────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+
+# ─── 🔐 Entorno (NUNCA commitear) ────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# ─── 🔏 Snapshots firmados (contienen estado del substrato) ──────
+snapshots/*.json
+snapshots/*.sig
+snapshots/*.txt
+snapshots/*.pem
+!snapshots/.gitkeep
+
+# ─── 📋 Sesiones temporales ──────────────────────────────────────
+data/sessions/2*.md
+data/sessions/*-log.md
+!data/sessions/_template.md
+
+# ─── 📝 Logs ────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ─── 🖥️ Sistema operativo ───────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── 💻 Editor ──────────────────────────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# ─── 🏗️ Build ───────────────────────────────────────────────────
+dist/
+build/
+out/
+*.tsbuildinfo
+.next/
+
+# ─── 💾 Cache ───────────────────────────────────────────────────
+.cache/
+.vercel/
+.npm/
+.eslintcache
+.parcel-cache
+
+# ─── 🗄️ Base de datos local ─────────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# ─── 🔑 Claves (NUNCA commitear) ────────────────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
+!test/fixtures/*.pem
+
+# ─── 🧪 Tests temporales ────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+
+# ─── 📊 Snapshots de prueba ─────────────────────────────────────
+test-snapshot*.json
+
+# ─── 🚀 Archivos personales ─────────────────────────────────────
+TODO-personal.md
+notas-*.md
+borrador-*.md
+temp/
+
+# ═══════════════════════════════════════════════════════════════
+#  Si algo de aquí aparece en git, es un error. Corrígelo.
+#  ── Marco Antonio Rojas Valdovinos ──
+# ═══════════════════════════════════════════════════════════════
