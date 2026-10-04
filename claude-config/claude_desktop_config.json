@@ -1,0 +1,46 @@
+{
+  "_comment": "═══════════════════════════════════════════════════════════════",
+  "_comment2": "MARCO.MCP · Claude Desktop configuration",
+  "_comment3": "Reemplaza /ABSOLUTE/PATH/TO con la ruta real",
+  "_comment4": "El install.sh te da el bloque exacto para pegar",
+  "_comment5": "═══════════════════════════════════════════════════════════════",
+
+  "mcpServers": {
+    "marco": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/marco-mcp/src/server.js"],
+      "env": {
+        "MARCO_CORE_PATH": "/ABSOLUTE/PATH/TO/marco-mcp/data",
+        "MARCO_OWNER": "Marco Antonio Rojas Valdovinos",
+        "MARCO_CONTACT": "marco.a.rojas.v@hotmail.com",
+        "MARCO_DEBUG": "0"
+      }
+    }
+  },
+
+  "_help": {
+    "locations": {
+      "macOS": "~/Library/Application Support/Claude/claude_desktop_config.json",
+      "linux": "~/.config/Claude/claude_desktop_config.json",
+      "windows": "%APPDATA%\\Claude\\claude_desktop_config.json"
+    },
+    "steps": [
+      "1. Corre ./install.sh en la raíz del repo",
+      "2. Copia el bloque JSON que imprime",
+      "3. Pégalo en el archivo de configuración de tu SO",
+      "4. Reinicia Claude Desktop",
+      "5. Verás 'marco' en la lista de servidores MCP"
+    ],
+    "verification": {
+      "safeCreative": "2607086319439",
+      "ethereum": "0x8ca8e84e1258abac9acb29d14d25114e4775d782ecfda51ae29933247ed2970e"
+    }
+  },
+
+  "_meta": {
+    "author": "Marco Antonio Rojas Valdovinos",
+    "contact": "marco.a.rojas.v@hotmail.com",
+    "version": "0.1.0",
+    "signature": "DMD-33 ●_○"
+  }
+}
