@@ -21,21 +21,18 @@ jobs:
           node-version: '20'
 
       - name: Generate Snapshot
-        id: hash
-        run: |
-          npm run snapshot
-          echo "short_date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-          echo "hash=$(sha256sum snapshots/latest.json | cut -d ' ' -f 1)" >> $GITHUB_OUTPUT
+        run: npm run snapshot
 
       - name: 💾 Commit snapshot
         run: |
           git config user.name "marco-mcp-bot"
           git config user.email "bot@marco.mcp"
-          git add -f snapshots/latest.json
+          # Fuerza la subida de TODO lo que esté dentro de la carpeta snapshots/
+          git add -f snapshots/
           if git diff --staged --quiet; then
             echo "Sin cambios en el snapshot"
           else
-            git commit -m "🔐 snapshot: ${{ steps.hash.outputs.short_date }} · ${{ steps.hash.outputs.hash }}"
+            git commit -m "🔐 snapshot: actualización automática [skip ci]"
             git push
-            echo "Snapshot commiteado"
+            echo "Snapshot commiteado exitosamente"
           fi
