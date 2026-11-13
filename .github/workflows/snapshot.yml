@@ -2,11 +2,11 @@ name: Snapshot diario
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Se ejecuta todos los días a medianoche
-  workflow_dispatch: # Permite ejecutarlo manualmente desde GitHub
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: write # ¡ESTO ES LO QUE FALTABA! Permiso para hacer push
+  contents: write
 
 jobs:
   snapshot:
@@ -21,17 +21,21 @@ jobs:
           node-version: '20'
 
       - name: Generate Snapshot
-        run: npm run snapshot
-
-      - name: Commit snapshot
+        id: hash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          # Solo hace commit si realmente hubo cambios en el snapshot
-          if ! git diff --staged --quiet; then
-            git commit -m "chore: update snapshot [skip ci]"
-            git push
+          npm run snapshot
+          echo "short_date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          echo "hash=$(sha256sum snapshots/latest.json | cut -d ' ' -f 1)" >> $GITHUB_OUTPUT
+
+      - name: 💾 Commit snapshot
+        run: |
+          git config user.name "marco-mcp-bot"
+          git config user.email "bot@marco.mcp"
+          git add -f snapshots/latest.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios en el snapshot"
           else
-            echo "✅ No hay cambios en el snapshot. Omitiendo commit."
+            git commit -m "🔐 snapshot: ${{ steps.hash.outputs.short_date }} · ${{ steps.hash.outputs.hash }}"
+            git push
+            echo "Snapshot commiteado"
           fi
